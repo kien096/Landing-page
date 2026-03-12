@@ -70,20 +70,20 @@ const Methodology: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.15 }}
               whileHover={{ backgroundColor: "rgba(255,255,255,0.03)" }}
-              className="relative p-8 sm:p-10 lg:p-12 border border-white/10 lg:border-y-0 lg:border-r-0 lg:border-l group rounded-[2rem] sm:rounded-[3rem] lg:rounded-none transition-all duration-700"
+              className="relative isolate p-8 sm:p-10 lg:p-12 border border-white/10 lg:border-y-0 lg:border-r-0 lg:border-l group rounded-[2rem] sm:rounded-[3rem] lg:rounded-none transition-all duration-700"
             >
               <div className="absolute top-0 left-0 w-0 h-[2px] lg:w-[2px] lg:h-0 bg-brand-500 group-hover:w-full lg:group-hover:w-[2px] lg:group-hover:h-full transition-all duration-1000"></div>
               
-              <div className="text-6xl sm:text-8xl lg:text-[100px] font-black text-white/[0.02] absolute top-3 sm:top-0 lg:top-[-40px] right-6 sm:right-8 -z-10 group-hover:text-brand-500/10 transition-all duration-1000 select-none">
+              <div className="pointer-events-none absolute top-4 right-5 text-6xl font-black leading-none text-white/[0.02] transition-all duration-1000 select-none sm:top-5 sm:right-6 sm:text-8xl lg:top-6 lg:right-8 lg:text-[88px] group-hover:text-brand-500/10">
                 {step.step}
               </div>
 
-              <div className="w-16 h-16 sm:w-20 sm:h-20 glass rounded-[1.2rem] sm:rounded-[1.8rem] flex items-center justify-center text-white mb-8 sm:mb-12 group-hover:bg-brand-500 group-hover:text-white transition-all duration-700 border-white/5 shadow-3xl group-hover:scale-110 group-hover:rotate-12">
+              <div className="relative z-10 w-16 h-16 sm:w-20 sm:h-20 glass rounded-[1.2rem] sm:rounded-[1.8rem] flex items-center justify-center text-white mb-8 sm:mb-12 group-hover:bg-brand-500 group-hover:text-white transition-all duration-700 border-white/5 shadow-3xl group-hover:scale-110 group-hover:rotate-12">
                 {step.icon}
               </div>
               
-              <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 sm:mb-6 tracking-tighter uppercase">{step.title}</h3>
-              <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed italic pr-0 sm:pr-4">{step.description}</p>
+              <h3 className="relative z-10 text-2xl sm:text-3xl font-black text-white mb-4 sm:mb-6 tracking-tighter uppercase">{step.title}</h3>
+              <p className="relative z-10 text-base sm:text-lg text-slate-400 font-medium leading-relaxed italic pr-0 sm:pr-4">{step.description}</p>
             </motion.div>
           ))}
         </div>
