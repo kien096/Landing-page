@@ -1,167 +1,237 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Rocket, Cpu, ShieldCheck, Zap } from 'lucide-react';
+import { Check, Cpu, ShieldCheck, Zap } from 'lucide-react';
+import { Locale } from '../types/locale';
 
-const Solution: React.FC = () => {
+interface SolutionProps {
+  locale: Locale;
+}
+
+const Solution: React.FC<SolutionProps> = ({ locale }) => {
+  const isVietnamese = locale === 'vi';
+
+  const buildPoints = isVietnamese
+    ? [
+        "Cơ chế RAG & Truy xuất dữ liệu chuyên sâu",
+        "Triển khai hạ tầng Private Cloud hoặc On-premise",
+        "Tự động hóa theo vai trò & Nghiệp vụ",
+        "Giao diện tinh gọn, vận hành tức thì",
+      ]
+    : [
+        'Contextual Data Indexing',
+        'Private Infrastructure',
+        'Role-Based Workflows',
+        'Frictionless UI',
+      ];
+
   return (
     <section id="solutions-detail" className="py-24 sm:py-32 lg:py-48 relative bg-black text-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 space-y-24 sm:space-y-32 lg:space-y-64">
-        
-        {/* Feature 1: The Integration Layer */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 sm:gap-16 lg:gap-24">
+      {/* Background radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-500/5 blur-[160px] rounded-full -z-10" />
+
+      <div className="container mx-auto px-4 sm:px-6 space-y-32 sm:space-y-48 lg:space-y-64">
+        {/* Section 1: AI Layers */}
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
           <div className="lg:w-1/2 space-y-12">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              className="w-14 h-14 sm:w-16 sm:h-16 glass rounded-[1.2rem] sm:rounded-[1.5rem] flex items-center justify-center text-brand-500 shadow-2xl border-white/5"
+              className="w-16 h-16 glass rounded-2xl flex items-center justify-center text-brand-500 shadow-brand-500/10 shadow-2xl border-white/10 backdrop-blur-3xl"
             >
               <Cpu size={32} />
             </motion.div>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl sm:text-5xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
+              className={`font-black font-display leading-[0.85] tracking-tighter ${
+                isVietnamese ? "text-3xl sm:text-5xl lg:text-7xl" : "text-4xl sm:text-6xl lg:text-8xl"
+              }`}
             >
-              Bespoke <br />
-              <span className="font-serif-italic text-brand-500 italic tracking-normal">AI Engines.</span>
+              {isVietnamese ? (
+                <>
+                  Giải pháp AI <br />
+                  <span className="font-serif-italic text-brand-500 italic tracking-normal">
+                    cho doanh nghiệp thực chiến.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Operations <br />
+                  <span className="font-serif-italic text-brand-500 italic tracking-normal">
+                    Ready AI.
+                  </span>
+                </>
+              )}
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-base sm:text-lg lg:text-xl text-slate-400 leading-relaxed font-medium italic"
+              className="text-base sm:text-lg lg:text-2xl text-slate-400 leading-relaxed font-medium max-w-xl text-balance"
             >
-              We craft specialized integration layers that bridge the gap between abstract LLM potential and <span className="text-white">concrete enterprise reality.</span>
+              {isVietnamese
+                ? "Không chỉ dừng lại ở Chatbot. Chúng tôi tích hợp AI vào lõi vận hành, kết nối trực tiếp với dữ liệu và quy trình nghiệp vụ của bạn."
+                : 'More than just a chatbot. We integrate AI directly into your business logic and existing workflows.'}
             </motion.p>
-            <motion.ul 
+            <motion.ul
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="space-y-6"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6"
             >
-              {[
-                "Custom RAG Architecture",
-                "Private Cloud Orchestration",
-                "Automated Contextual Indexing",
-                "Artistic UI/UX For AI Workflows"
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-5 group">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white flex items-center justify-center shadow-[0_0_15px_rgba(81,47,235,0.4)] transform group-hover:scale-110 transition-transform">
+              {buildPoints.map((item) => (
+                <motion.li
+                  key={item}
+                  whileHover={{ x: 5 }}
+                  className="flex items-center gap-4 group"
+                >
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-500/20 text-brand-500 flex items-center justify-center border border-brand-500/20 group-hover:bg-brand-500 group-hover:text-white transition-all duration-300">
                     <Check size={14} />
                   </div>
-                  <span className="text-base sm:text-lg lg:text-xl font-black text-white/90 tracking-tight">{item}</span>
-                </li>
+                  <span className="text-base lg:text-lg font-bold text-white/80 group-hover:text-white transition-colors">
+                    {item}
+                  </span>
+                </motion.li>
               ))}
             </motion.ul>
           </div>
-          
+
           <div className="lg:w-1/2 relative group w-full">
-            <motion.div 
-               initial={{ opacity: 0, rotate: 5, scale: 0.95 }}
-               whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
-               transition={{ duration: 1 }}
-               className="glass p-4 sm:p-6 rounded-[2.5rem] sm:rounded-[4rem] relative z-10 border-white/5 overflow-hidden shadow-[0_60px_120px_-20px_rgba(81,47,235,0.1)] hover:border-brand-500/30 transition-all duration-700"
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="glass p-6 sm:p-10 rounded-[3.5rem] relative z-10 border-white/10 overflow-hidden shadow-2xl backdrop-blur-3xl group-hover:border-brand-500/30 transition-all duration-700"
             >
-               <div className="bg-slate-900/40 rounded-[2rem] sm:rounded-[3.5rem] p-6 sm:p-10 lg:p-12 flex flex-col items-center gap-8 sm:gap-12 overflow-hidden">
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 w-full">
-                     <div className="w-20 h-24 sm:h-28 glass rounded-2xl border-white/5 flex flex-col items-center justify-center gap-2">
-                        <div className="w-10 h-1 bg-white/10 rounded"></div>
-                        <div className="w-10 h-1 bg-white/5 rounded"></div>
-                        <span className="text-[10px] font-black text-slate-500 mt-3 uppercase tracking-widest">Data Lab</span>
-                     </div>
-                     <div className="w-px h-16 sm:w-full sm:h-px bg-gradient-to-b sm:bg-gradient-to-r from-transparent via-brand-500 to-transparent relative">
-                        <motion.div 
-                          animate={{ x: [-15, 15, -15] }}
-                          transition={{ duration: 3, repeat: Infinity }}
-                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 bg-brand-500 text-white rounded-full shadow-[0_0_30px_#512FEB]"
-                        >
-                           <Zap size={20} />
-                        </motion.div>
-                     </div>
-                     <div className="w-20 h-28 bg-white rounded-2xl flex flex-col items-center justify-center gap-2 shadow-2xl">
-                        <Cpu size={32} className="text-brand-500 animate-pulse" />
-                        <span className="text-[9px] font-black text-slate-900 px-2 py-1 bg-brand-50 rounded-full">CORE</span>
-                     </div>
+              <div className="bg-slate-950/60 rounded-[2.5rem] p-10 sm:p-16 flex flex-col items-center gap-12 overflow-hidden border border-white/5">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-10 w-full relative">
+                  <div className="w-24 h-32 glass rounded-3xl border-white/10 flex flex-col items-center justify-center gap-3 shadow-xl">
+                    <div className="w-12 h-1.5 bg-white/20 rounded-full" />
+                    <div className="w-12 h-1.5 bg-white/10 rounded-full" />
+                    <span className="text-[10px] font-black text-slate-500 mt-4 uppercase tracking-[0.2em]">{isVietnamese ? 'Nguồn dữ liệu' : 'Data'}</span>
                   </div>
-               </div>
+
+                  <div className="flex-1 h-px bg-gradient-to-r from-transparent via-brand-500 to-transparent relative min-w-[100px]">
+                    <motion.div
+                      animate={{ x: [-20, 20, -20] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 bg-brand-500 text-white rounded-full shadow-[0_0_25px_#512FEB]"
+                    >
+                      <Zap size={20} fill="currentColor" />
+                    </motion.div>
+                  </div>
+
+                  <div className="w-24 h-32 bg-white rounded-3xl flex flex-col items-center justify-center gap-3 shadow-2xl group-hover:scale-105 transition-transform duration-500">
+                    <Cpu size={36} className="text-brand-500 animate-pulse" />
+                    <span className="text-[10px] font-black text-slate-900 px-3 py-1 bg-brand-50 rounded-full">CORE</span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-500/10 blur-[100px] rounded-full -z-10 group-hover:scale-110 transition-transform duration-1000" />
           </div>
         </div>
 
-        {/* Feature 2: Strategic Security */}
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-12 sm:gap-16 lg:gap-24">
-          <div className="lg:w-1/2 space-y-12">
-            <motion.div 
-               initial={{ opacity: 0, scale: 0.8 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-              className="w-14 h-14 sm:w-16 sm:h-16 glass rounded-[1.2rem] sm:rounded-[1.5rem] flex items-center justify-center text-accent-cyan shadow-2xl border-white/5"
+        {/* Section 2: Security */}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-32">
+          <div className="lg:w-1/2 space-y-12 text-left">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="w-16 h-16 glass rounded-2xl flex items-center justify-center text-brand-500 shadow-brand-500/10 shadow-2xl border-white/10 backdrop-blur-3xl"
             >
               <ShieldCheck size={32} />
             </motion.div>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-4xl sm:text-5xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
+              className={`font-black font-display leading-[0.85] tracking-tighter ${
+                isVietnamese ? "text-3xl sm:text-5xl lg:text-7xl" : "text-4xl sm:text-6xl lg:text-8xl"
+              }`}
             >
-              Ethereal <br />
-              <span className="font-serif-italic text-accent-cyan italic tracking-normal">Security.</span>
+              {isVietnamese ? (
+                <>
+                  Bảo mật & Quản trị <br />
+                  <span className="font-serif-italic text-brand-500 italic tracking-normal">
+                    hệ thống đa lớp.
+                  </span>
+                </>
+              ) : (
+                <>
+                  Secure <br />
+                  <span className="font-serif-italic text-brand-500 italic tracking-normal">
+                    by Design.
+                  </span>
+                </>
+              )}
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-base sm:text-lg lg:text-xl text-slate-400 leading-relaxed font-medium italic"
+              className={`text-base sm:text-lg lg:text-2xl text-slate-400 leading-relaxed font-medium max-w-xl text-balance`}
             >
-              Protection that is invisible yet absolute. We implement local inference and private VPC tunnels to ensure your vision remains <span className="text-white">exclusively yours.</span>
+              {isVietnamese
+                ? "Làm chủ hoàn toàn dữ liệu với hạ tầng riêng tư (Private) và cơ chế phân quyền chặt chẽ, đảm bảo ATTT ở mức cao nhất."
+                : 'Complete control over your data with enterprise-grade governance and secure infrastructure choices.'}
             </motion.p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-               <motion.div 
-                 whileHover={{ y: -8 }}
-                 className="glass p-8 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border-white/5 hover:border-brand-500/30 transition-all duration-500"
-               >
-                  <h4 className="text-brand-500 font-black text-[9px] sm:text-[10px] mb-3 sm:mb-4 uppercase tracking-[0.3em] sm:tracking-[0.4em]">Infrastructure</h4>
-                  <p className="text-white font-black text-xl sm:text-2xl leading-tight tracking-tight uppercase">Private <br />Core</p>
-               </motion.div>
-               <motion.div 
-                 whileHover={{ y: -8 }}
-                 className="glass p-8 sm:p-10 rounded-[2rem] sm:rounded-[3rem] border-white/5 hover:border-accent-purple/30 transition-all duration-500"
-               >
-                  <h4 className="text-accent-purple font-black text-[9px] sm:text-[10px] mb-3 sm:mb-4 uppercase tracking-[0.3em] sm:tracking-[0.4em]">Governance</h4>
-                  <p className="text-white font-black text-xl sm:text-2xl leading-tight tracking-tight uppercase">ISO-Deep <br />Ready</p>
-               </motion.div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="glass p-8 rounded-3xl border-white/10 hover:border-brand-500/30 transition-all shadow-xl"
+              >
+                <h4 className="text-brand-500 font-black text-[10px] mb-4 uppercase tracking-[0.4em]">Infrastructure</h4>
+                <p className="text-white font-black text-xl lg:text-2xl tracking-tight uppercase leading-none">
+                  {isVietnamese ? 'Private cloud và VPC' : 'Private Cloud & VPC'}
+                </p>
+              </motion.div>
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="glass p-8 rounded-3xl border-white/10 hover:border-accent-purple/30 transition-all shadow-xl"
+              >
+                <h4 className="text-accent-purple font-black text-[10px] mb-4 uppercase tracking-[0.4em]">Governance</h4>
+                <p className="text-white font-black text-xl lg:text-2xl tracking-tight uppercase leading-none">
+                  {isVietnamese ? 'Role-based access' : 'Role-Based Access'}
+                </p>
+              </motion.div>
             </div>
           </div>
-          
+
           <div className="lg:w-1/2 w-full">
-             <motion.div 
-               initial={{ opacity: 0, scale: 0.95 }}
-               whileInView={{ opacity: 1, scale: 1 }}
-               className="relative p-4 sm:p-6 glass rounded-[2.5rem] sm:rounded-[4rem] shadow-3xl border-white/5 overflow-hidden group"
-             >
-                <div className="relative z-10 bg-white/[0.02] rounded-[2rem] sm:rounded-[3.5rem] p-8 sm:p-12 lg:p-20 border border-white/5 text-center">
-                   <div className="flex flex-col gap-8 sm:gap-10 items-center">
-                      <div className="inline-flex px-5 py-2 bg-brand-500/10 text-brand-400 text-[10px] font-black rounded-full border border-brand-500/20 items-center gap-2 tracking-[0.3em]">
-                         <div className="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></div>
-                         SYSTEM INTEGRITY ACTIVE
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="relative p-6 glass rounded-[3.5rem] shadow-2xl border-white/10 overflow-hidden group backdrop-blur-3xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent opacity-50" />
+              <div className="relative z-10 bg-slate-950/40 rounded-[2.5rem] p-12 sm:p-20 lg:p-24 border border-white/5 text-center">
+                <div className="flex flex-col gap-10 items-center">
+                  <div className="inline-flex px-6 py-2.5 bg-brand-500/10 text-brand-400 text-[10px] font-black rounded-full border border-brand-500/20 items-center gap-3 tracking-[0.3em]">
+                    <span className="w-2.5 h-2.5 rounded-full bg-brand-500 animate-pulse" />
+                    {isVietnamese ? 'KIỂM SOÁT HỆ THỐNG ĐANG BẬT' : 'INTEGRITY MONITORING ACTIVE'}
+                  </div>
+                  <div className="space-y-12 w-full max-w-sm">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="h-0.5 bg-white/10 rounded-full relative overflow-hidden">
+                        <motion.div
+                          animate={{ left: ['-100%', '100%'] }}
+                          transition={{ duration: 5, repeat: Infinity, delay: i * 0.8, ease: 'linear' }}
+                          className="absolute top-0 bottom-0 w-1/4 bg-brand-500 shadow-[0_0_20px_#512FEB]"
+                        />
                       </div>
-                      <div className="space-y-10 w-full max-w-sm">
-                        {[1, 2, 3].map((i) => (
-                           <div key={i} className="h-0.5 bg-white/5 rounded-full relative overflow-hidden">
-                              <motion.div 
-                                animate={{ left: ["-100%", "100%"] }}
-                                transition={{ duration: 4, repeat: Infinity, delay: i * 0.7 }}
-                                className="absolute top-0 bottom-0 w-1/3 bg-brand-500 opacity-40 shadow-[0_0_15px_#512FEB]"
-                              ></motion.div>
-                           </div>
-                        ))}
-                      </div>
-                      <p className="text-[10px] font-black text-slate-600 uppercase tracking-[0.6em]">VULNERABILITY: <span className="text-white">0.00%</span></p>
-                   </div>
+                    ))}
+                  </div>
+                  <div className="pt-6">
+                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.6em]">
+                      {isVietnamese ? 'MỨC RỦI RO' : 'RISK PROXIMITY'}:{' '}
+                      <span className="text-emerald-400">NOMINAL</span>
+                    </p>
+                  </div>
                 </div>
-             </motion.div>
+              </div>
+            </motion.div>
           </div>
         </div>
-
       </div>
     </section>
   );

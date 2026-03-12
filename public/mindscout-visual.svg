@@ -1,0 +1,62 @@
+<svg width="1400" height="960" viewBox="0 0 1400 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="960" rx="52" fill="#F8FAFC"/>
+  <rect x="36" y="36" width="1328" height="888" rx="40" fill="white"/>
+  <rect x="76" y="76" width="1248" height="84" rx="26" fill="#F8FAFC"/>
+  <rect x="112" y="102" width="44" height="44" rx="14" fill="#512FEB"/>
+  <path d="M130.5 123.5C130.5 116.596 136.096 111 143 111C149.904 111 155.5 116.596 155.5 123.5C155.5 130.404 149.904 136 143 136C136.096 136 130.5 130.404 130.5 123.5Z" stroke="white" stroke-width="5"/>
+  <path d="M151.5 133.5L161 143" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  <rect x="186" y="101" width="236" height="18" rx="9" fill="#111827"/>
+  <rect x="186" y="128" width="182" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="1088" y="100" width="92" height="36" rx="18" fill="#EEF2FF"/>
+  <rect x="1194" y="100" width="94" height="36" rx="18" fill="#111827"/>
+  <rect x="94" y="204" width="488" height="674" rx="34" fill="#F8FAFC"/>
+  <rect x="616" y="204" width="690" height="674" rx="34" fill="#F8FAFC"/>
+  <rect x="126" y="238" width="180" height="16" rx="8" fill="#512FEB" fill-opacity="0.18"/>
+  <rect x="126" y="272" width="308" height="28" rx="14" fill="#111827"/>
+  <rect x="126" y="314" width="398" height="14" rx="7" fill="#CBD5E1"/>
+  <rect x="126" y="348" width="360" height="14" rx="7" fill="#CBD5E1"/>
+  <rect x="126" y="398" width="424" height="88" rx="24" fill="white"/>
+  <rect x="150" y="422" width="148" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="150" y="446" width="220" height="18" rx="9" fill="#111827"/>
+  <rect x="398" y="420" width="120" height="42" rx="21" fill="#EEF2FF"/>
+  <rect x="126" y="510" width="424" height="140" rx="28" fill="white"/>
+  <rect x="150" y="542" width="188" height="14" rx="7" fill="#111827"/>
+  <rect x="150" y="572" width="228" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="150" y="604" width="148" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="404" y="542" width="114" height="74" rx="22" fill="#512FEB"/>
+  <rect x="126" y="674" width="200" height="170" rx="28" fill="white"/>
+  <rect x="350" y="674" width="200" height="170" rx="28" fill="white"/>
+  <rect x="150" y="706" width="92" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="374" y="706" width="90" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="150" y="734" width="124" height="18" rx="9" fill="#111827"/>
+  <rect x="374" y="734" width="128" height="18" rx="9" fill="#111827"/>
+  <rect x="150" y="776" width="152" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="374" y="776" width="144" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="648" y="238" width="626" height="82" rx="28" fill="white"/>
+  <rect x="678" y="268" width="246" height="16" rx="8" fill="#111827"/>
+  <rect x="956" y="256" width="142" height="42" rx="21" fill="#EEF2FF"/>
+  <rect x="1114" y="256" width="130" height="42" rx="21" fill="#111827"/>
+  <rect x="648" y="346" width="292" height="216" rx="28" fill="white"/>
+  <rect x="670" y="370" width="118" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="670" y="400" width="178" height="18" rx="9" fill="#111827"/>
+  <rect x="670" y="442" width="238" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="670" y="474" width="204" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="670" y="514" width="102" height="30" rx="15" fill="#EEF2FF"/>
+  <rect x="972" y="346" width="302" height="216" rx="28" fill="white"/>
+  <rect x="996" y="370" width="114" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="996" y="400" width="176" height="18" rx="9" fill="#111827"/>
+  <rect x="996" y="442" width="242" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="996" y="474" width="204" height="12" rx="6" fill="#CBD5E1"/>
+  <rect x="996" y="514" width="98" height="30" rx="15" fill="#E0F2FE"/>
+  <rect x="648" y="588" width="626" height="256" rx="28" fill="white"/>
+  <rect x="678" y="618" width="164" height="12" rx="6" fill="#94A3B8"/>
+  <rect x="678" y="648" width="320" height="18" rx="9" fill="#111827"/>
+  <rect x="678" y="700" width="566" height="18" rx="9" fill="#E2E8F0"/>
+  <rect x="678" y="736" width="532" height="18" rx="9" fill="#E2E8F0"/>
+  <rect x="678" y="772" width="448" height="18" rx="9" fill="#E2E8F0"/>
+  <rect x="1128" y="646" width="116" height="42" rx="21" fill="#512FEB"/>
+  <text x="126" y="284" fill="#111827" font-family="Inter, sans-serif" font-size="26" font-weight="800">MindScout</text>
+  <text x="126" y="730" fill="#0F172A" font-family="Inter, sans-serif" font-size="28" font-weight="800">Lead list</text>
+  <text x="374" y="730" fill="#0F172A" font-family="Inter, sans-serif" font-size="28" font-weight="800">Campaigns</text>
+  <text x="676" y="290" fill="#0F172A" font-family="Inter, sans-serif" font-size="24" font-weight="700">AI-powered B2B lead scouting platform</text>
+</svg>
