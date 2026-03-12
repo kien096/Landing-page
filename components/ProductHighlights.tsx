@@ -6,9 +6,9 @@ const ProductHighlights: React.FC = () => {
   const products = [
     {
       name: 'MindCoach',
-      tagline: 'Internal Expansion Protocol',
-      description: 'The specialized AI agent that transforms your company manuals into an interactive, artfully curated knowledge consciousness for every employee.',
-      features: ['Real-time Scenario Training', '24/7 Expert Tutoring', 'Performance Analytics'],
+      tagline: 'For internal knowledge and training',
+      description: 'Turn SOPs, manuals and internal FAQs into an assistant employees can use for onboarding, refresher training and day-to-day questions.',
+      features: ['Ask from company docs', 'Guided scenario practice', 'Training progress visibility'],
       image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80',
       id: 'mindcoach',
       color: 'brand',
@@ -16,9 +16,9 @@ const ProductHighlights: React.FC = () => {
     },
     {
       name: 'MindScout',
-      tagline: 'Strategic Outreach Core',
-      description: 'An ethereal lead generation engine that forges deep human-like connections at scale, ensuring your message lands with artistic precision.',
-      features: ['Automated Lead Discovery', 'Emotional Personalization', 'Multi-channel Sync'],
+      tagline: 'For outbound research and outreach',
+      description: 'Give sales teams a faster way to find leads, organize context and prepare better first-touch messaging without starting from scratch each time.',
+      features: ['Lead research workflow', 'Message prep support', 'Pipeline-ready context'],
       image: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80',
       id: 'mindscout',
       color: 'purple',
@@ -33,16 +33,16 @@ const ProductHighlights: React.FC = () => {
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-[9px] sm:text-[10px] font-black text-brand-500 uppercase tracking-[0.4em] sm:tracking-[0.6em] mb-6 sm:mb-12"
+            className="text-[9px] sm:text-[10px] font-black text-brand-400 uppercase tracking-[0.3em] sm:tracking-[0.45em] mb-6 sm:mb-12"
           >
-            Machine Intelligence
+            Products
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-4xl sm:text-5xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
           >
-            Specialized <span className="font-serif-italic text-white/90 italic tracking-normal">Instruments.</span>
+            Built for two clear <span className="font-serif-italic text-white/90 italic tracking-normal">jobs.</span>
           </motion.h2>
         </div>
 
@@ -60,11 +60,11 @@ const ProductHighlights: React.FC = () => {
                     </motion.div>
                     <div>
                        <h3 className="text-4xl sm:text-5xl lg:text-6xl font-black font-display tracking-tighter leading-none">{product.name}</h3>
-                       <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.25em] sm:tracking-[0.4em] text-slate-500 mt-2">{product.tagline}</p>
+                       <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.32em] text-slate-500 mt-2">{product.tagline}</p>
                     </div>
                  </div>
-                 <p className="text-lg sm:text-xl lg:text-2xl text-slate-400 font-medium leading-relaxed max-w-xl italic">
-                   "{product.description}"
+                 <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 font-medium leading-relaxed max-w-xl">
+                   {product.description}
                  </p>
                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     {product.features.map((feature, fIdx) => (
@@ -72,7 +72,7 @@ const ProductHighlights: React.FC = () => {
                         <div className="w-10 h-10 glass rounded-xl flex items-center justify-center text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all shadow-2xl border-white/5">
                            <Layers size={18} />
                         </div>
-                        <span className="font-black text-slate-300 text-sm sm:text-base tracking-tight">{feature}</span>
+                        <span className="font-black text-slate-200 text-sm sm:text-base tracking-tight">{feature}</span>
                       </div>
                     ))}
                  </div>
@@ -81,11 +81,10 @@ const ProductHighlights: React.FC = () => {
                       href={product.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative inline-flex w-full sm:w-auto justify-center glass px-8 sm:px-10 py-4 sm:py-5 rounded-[1.8rem] sm:rounded-[2.5rem] items-center gap-4 sm:gap-5 hover:bg-white hover:text-black transition-all duration-700 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] border-white/10 overflow-hidden"
+                      className="group relative inline-flex w-full sm:w-auto justify-center px-8 sm:px-10 py-4 sm:py-5 rounded-[1.2rem] items-center gap-4 sm:gap-5 bg-slate-950 text-white hover:bg-brand-500 transition-all duration-300 shadow-[0_18px_30px_-20px_rgba(15,23,42,0.55)] overflow-hidden"
                     >
-                       <div className="absolute inset-0 bg-white translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-700"></div>
-                       <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.3em]">Launch Laboratory</span>
-                       <div className="relative z-10 w-8 h-8 rounded-full bg-brand-500 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform shadow-xl">
+                       <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.3em]">View product</span>
+                       <div className="relative z-10 w-8 h-8 rounded-full bg-white/15 text-white flex items-center justify-center group-hover:translate-x-1 transition-transform">
                           <ArrowUpRight size={16} />
                        </div>
                     </a>
@@ -98,13 +97,13 @@ const ProductHighlights: React.FC = () => {
                    initial={{ opacity: 0, scale: 0.95, y: 50 }}
                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                   className="relative z-10 p-3 sm:p-4 lg:p-6 glass rounded-[2.5rem] sm:rounded-[3rem] lg:rounded-[4.5rem] border-white/5 shadow-[0_80px_150px_-50px_rgba(0,0,0,1)] overflow-hidden"
+                   className="relative z-10 p-3 sm:p-4 lg:p-6 glass rounded-[2.5rem] sm:rounded-[3rem] lg:rounded-[4.5rem] border-white/5 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] overflow-hidden"
                  >
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-60"></div>
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full aspect-[4/3] object-cover rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3.8rem] grayscale Contrast-125 brightness-[0.6] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-2000 ease-out scale-[1.05] group-hover:scale-100"
+                      className="w-full aspect-[4/3] object-cover rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3.8rem] saturate-[0.9] Contrast-110 brightness-[0.82] group-hover:brightness-100 transition-all duration-1200 ease-out scale-[1.03] group-hover:scale-100"
                     />
                  </motion.div>
                  <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] blur-[180px] rounded-full -z-10 opacity-[0.08] transition-all duration-1000 group-hover:opacity-[0.12] ${product.color === 'brand' ? 'bg-brand-500' : 'bg-accent-purple'}`}></div>

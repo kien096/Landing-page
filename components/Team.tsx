@@ -54,18 +54,18 @@ const Testimonials: React.FC = () => {
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="inline-flex items-center gap-3 sm:gap-4 px-5 sm:px-8 py-2 sm:py-3 glass rounded-full shadow-2xl border-white/10 text-[9px] sm:text-[10px] font-black tracking-[0.3em] sm:tracking-[0.5em] text-brand-500 mb-6 sm:mb-12 uppercase"
+          className="inline-flex items-center gap-3 sm:gap-4 px-5 sm:px-8 py-2 sm:py-3 glass rounded-full shadow-2xl border-white/5 text-[9px] sm:text-[10px] font-black tracking-[0.3em] sm:tracking-[0.5em] text-brand-500 mb-6 sm:mb-12 uppercase"
         >
           <Sparkles size={18} className="text-accent-purple" />
-          The Expansion Matrix
+          Customer feedback
         </motion.div>
         <motion.h3 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="text-4xl sm:text-5xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
         >
-          Forging <br />
-          <span className="font-serif-italic text-white/90 italic tracking-normal">Immortal</span> Trust.
+          What teams say after <br />
+          <span className="font-serif-italic text-white/90 italic tracking-normal">going live.</span>
         </motion.h3>
       </div>
 

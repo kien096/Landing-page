@@ -11,36 +11,36 @@ import {
 const Services: React.FC = () => {
   const services = [
     {
-      title: "AI Strategy & Roadmap",
+      title: "Use-case discovery",
       description:
-        "Visionary consulting to identify high-impact AI targets aligned with your creative and business goals.",
+        "We map the places where AI is actually useful first, instead of forcing generic copilots into every workflow.",
       icon: <Lightbulb size={28} />,
       color: "bg-brand-500",
-      tag: "Strategic",
+      tag: "Plan",
     },
     {
-      title: "Custom AI Development",
+      title: "Custom copilots",
       description:
-        "Artfully engineered LLM solutions and custom AI agents built to handle your unique proprietary data.",
+        "We build assistants and guided flows around your documents, product knowledge and internal terminology.",
       icon: <Code2 size={28} />,
       color: "bg-accent-purple",
-      tag: "Technical",
+      tag: "Build",
     },
     {
-      title: "Enterprise Integration",
+      title: "Workflow integration",
       description:
-        "Seamlessly weaving intelligence into legacy architecture with precision and zero interruption.",
+        "From portals to mobile access, we fit the product into the tools your team already uses day to day.",
       icon: <Layers size={28} />,
       color: "bg-accent-cyan",
-      tag: "Systems",
+      tag: "Connect",
     },
     {
-      title: "Strategic Governance",
+      title: "Security and governance",
       description:
-        "Ensuring your AI implementation is ethical, compliant, and rock-solid secure at every layer.",
+        "Access control, private data handling and rollout rules are designed in from the start, not added later.",
       icon: <ShieldCheck size={28} />,
       color: "bg-slate-900",
-      tag: "Security",
+      tag: "Control",
     },
   ];
 
@@ -55,20 +55,19 @@ const Services: React.FC = () => {
             <motion.h2
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="text-[9px] sm:text-[10px] font-black text-brand-500 uppercase tracking-[0.4em] sm:tracking-[0.6em] mb-6 sm:mb-10"
+              className="text-[9px] sm:text-[10px] font-black text-brand-400 uppercase tracking-[0.35em] sm:tracking-[0.5em] mb-6 sm:mb-10"
             >
-              Consulting Excellence
+              What we help teams ship
             </motion.h2>
             <motion.h3
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl sm:text-5xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
             >
-              Expert Solutions for <br />
+              From strategy to rollout, <br />
               <span className="font-serif-italic text-white/90 italic tracking-normal">
-                AI-First
+                without the AI theater.
               </span>{" "}
-              Enterprises.
             </motion.h3>
           </div>
           <motion.div
@@ -76,11 +75,11 @@ const Services: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             className="w-full lg:w-auto lg:pt-20"
           >
-            <div className="glass p-6 sm:p-8 lg:p-10 rounded-[2rem] sm:rounded-[3.5rem] border border-white/10 flex items-center justify-between gap-6 sm:gap-10 group hover:border-brand-500/30 transition-all duration-500 shadow-3xl">
-              <div className="text-slate-400 font-bold max-w-[220px] text-sm sm:text-base leading-relaxed italic group-hover:text-white transition-colors">
-                Trusted by over 100+ expansion partners in Vietnam.
+            <div className="glass p-6 sm:p-8 lg:p-10 rounded-[2rem] sm:rounded-[3.5rem] border border-white/5 flex items-center justify-between gap-6 sm:gap-10 group hover:border-brand-500/18 transition-all duration-500 shadow-3xl">
+              <div className="text-slate-300 font-semibold max-w-[240px] text-sm sm:text-base leading-relaxed group-hover:text-white transition-colors">
+                Used in training, onboarding and sales enablement across Vietnam-based teams.
               </div>
-              <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-white text-black flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-all transform group-hover:scale-110 cursor-pointer shadow-[0_0_30px_rgba(255,255,255,0.1)] shrink-0">
+              <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-slate-950 text-white flex items-center justify-center group-hover:bg-brand-500 transition-all transform group-hover:scale-105 cursor-pointer shadow-[0_18px_28px_-18px_rgba(15,23,42,0.45)] shrink-0">
                 <ArrowRight size={22} className="sm:w-7 sm:h-7" />
               </div>
             </div>
@@ -94,8 +93,8 @@ const Services: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              whileHover={{ y: -15, scale: 1.02 }}
-              className="group relative min-h-[360px] sm:min-h-[420px] lg:h-[500px] p-8 sm:p-10 lg:p-12 rounded-[2.5rem] sm:rounded-[4rem] bg-white/[0.02] border border-white/5 hover:border-brand-500/20 hover:bg-white/[0.04] hover:shadow-[0_40px_100px_-20px_rgba(81,47,235,0.15)] transition-all duration-700 overflow-hidden"
+              whileHover={{ y: -10, scale: 1.01 }}
+              className="group relative min-h-[360px] sm:min-h-[420px] lg:h-[500px] p-8 sm:p-10 lg:p-12 rounded-[2.5rem] sm:rounded-[4rem] bg-white/[0.02] border border-white/5 hover:border-brand-500/16 hover:bg-white/[0.035] hover:shadow-[0_30px_80px_-24px_rgba(81,47,235,0.16)] transition-all duration-700 overflow-hidden"
             >
               <div
                 className={`w-16 h-16 sm:w-20 sm:h-20 ${service.color} rounded-[1.4rem] sm:rounded-[1.8rem] flex items-center justify-center text-white mb-8 sm:mb-12 shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
@@ -108,7 +107,7 @@ const Services: React.FC = () => {
               <h3 className="text-2xl sm:text-3xl font-black text-white mb-5 sm:mb-8 leading-tight tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-slate-400 text-base sm:text-lg leading-relaxed font-medium italic">
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-medium">
                 {service.description}
               </p>
 

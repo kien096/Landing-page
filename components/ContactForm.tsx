@@ -53,7 +53,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
               exit={{ opacity: 0, scale: 0.9, y: 40 }}
               className="w-full max-w-2xl pointer-events-auto relative my-auto"
             >
-              <div className="glass rounded-[2.25rem] sm:rounded-[3rem] md:rounded-[4rem] border border-white/10 bg-black/95 p-5 sm:p-8 md:p-12 relative overflow-hidden shadow-[0_0_100px_rgba(0,0,0,1)]">
+              <div className="glass rounded-[2.25rem] sm:rounded-[3rem] md:rounded-[4rem] border border-white/5 bg-black/95 p-5 sm:p-8 md:p-12 relative overflow-hidden shadow-[0_0_100px_rgba(0,0,0,1)]">
                 {/* Background Glow */}
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand-500/20 blur-[100px] rounded-full pointer-events-none"></div>
                 
@@ -127,7 +127,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 10 }}
-                            className="absolute top-full left-0 right-0 mt-3 glass rounded-[2rem] border border-white/10 bg-[#0A0A0A] overflow-hidden z-[120] shadow-3xl"
+                            className="absolute top-full left-0 right-0 mt-3 glass rounded-[2rem] border border-white/5 bg-[#0A0A0A] overflow-hidden z-[120] shadow-3xl"
                           >
                             {options.map((opt) => (
                               <button

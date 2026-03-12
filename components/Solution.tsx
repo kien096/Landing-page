@@ -13,7 +13,7 @@ const Solution: React.FC = () => {
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              className="w-14 h-14 sm:w-16 sm:h-16 glass rounded-[1.2rem] sm:rounded-[1.5rem] flex items-center justify-center text-brand-500 shadow-2xl border-white/10"
+              className="w-14 h-14 sm:w-16 sm:h-16 glass rounded-[1.2rem] sm:rounded-[1.5rem] flex items-center justify-center text-brand-500 shadow-2xl border-white/5"
             >
               <Cpu size={32} />
             </motion.div>
@@ -60,7 +60,7 @@ const Solution: React.FC = () => {
                initial={{ opacity: 0, rotate: 5, scale: 0.95 }}
                whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
                transition={{ duration: 1 }}
-               className="glass p-4 sm:p-6 rounded-[2.5rem] sm:rounded-[4rem] relative z-10 border-white/10 overflow-hidden shadow-[0_60px_120px_-20px_rgba(81,47,235,0.1)] hover:border-brand-500/30 transition-all duration-700"
+               className="glass p-4 sm:p-6 rounded-[2.5rem] sm:rounded-[4rem] relative z-10 border-white/5 overflow-hidden shadow-[0_60px_120px_-20px_rgba(81,47,235,0.1)] hover:border-brand-500/30 transition-all duration-700"
             >
                <div className="bg-slate-900/40 rounded-[2rem] sm:rounded-[3.5rem] p-6 sm:p-10 lg:p-12 flex flex-col items-center gap-8 sm:gap-12 overflow-hidden">
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 w-full">
@@ -94,7 +94,7 @@ const Solution: React.FC = () => {
             <motion.div 
                initial={{ opacity: 0, scale: 0.8 }}
                whileInView={{ opacity: 1, scale: 1 }}
-               className="w-14 h-14 sm:w-16 sm:h-16 glass rounded-[1.2rem] sm:rounded-[1.5rem] flex items-center justify-center text-accent-cyan shadow-2xl border-white/10"
+              className="w-14 h-14 sm:w-16 sm:h-16 glass rounded-[1.2rem] sm:rounded-[1.5rem] flex items-center justify-center text-accent-cyan shadow-2xl border-white/5"
             >
               <ShieldCheck size={32} />
             </motion.div>
@@ -136,7 +136,7 @@ const Solution: React.FC = () => {
              <motion.div 
                initial={{ opacity: 0, scale: 0.95 }}
                whileInView={{ opacity: 1, scale: 1 }}
-               className="relative p-4 sm:p-6 glass rounded-[2.5rem] sm:rounded-[4rem] shadow-3xl border-white/10 overflow-hidden group"
+               className="relative p-4 sm:p-6 glass rounded-[2.5rem] sm:rounded-[4rem] shadow-3xl border-white/5 overflow-hidden group"
              >
                 <div className="relative z-10 bg-white/[0.02] rounded-[2rem] sm:rounded-[3.5rem] p-8 sm:p-12 lg:p-20 border border-white/5 text-center">
                    <div className="flex flex-col gap-8 sm:gap-10 items-center">

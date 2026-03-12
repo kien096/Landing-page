@@ -32,15 +32,15 @@ const FeaturesGrid: React.FC = () => {
               whileInView={{ opacity: 1 }}
               className="text-[9px] sm:text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] sm:tracking-[0.8em] mb-6 sm:mb-12"
             >
-              Enterprise Capabilities
+              Why teams choose MindShift
             </motion.h2>
             <motion.h2 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl sm:text-5xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
             >
-              Scale with Artful <br />
-              <span className="font-serif-italic text-brand-500 italic tracking-normal">Precision.</span>
+              Built for adoption, <br />
+              <span className="font-serif-italic text-brand-500 italic tracking-normal">not just attention.</span>
             </motion.h2>
           </div>
         </div>
@@ -57,13 +57,13 @@ const FeaturesGrid: React.FC = () => {
             className="md:col-span-6 lg:col-span-8 glass p-8 sm:p-12 lg:p-16 rounded-[2.5rem] sm:rounded-[3rem] lg:rounded-[4.5rem] border-white/5 relative overflow-hidden group hover:bg-white/[0.04] hover:border-brand-500/20 transition-all duration-1000 shadow-3xl"
           >
             <div className="relative z-10 space-y-8 sm:space-y-10 lg:space-y-12">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white text-black rounded-[1.2rem] sm:rounded-[1.8rem] flex items-center justify-center shadow-[0_15px_30px_rgba(0,0,0,0.5)] group-hover:bg-brand-500 group-hover:text-white transition-all transform group-hover:rotate-12 duration-700">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#f6f2ea] text-slate-950 rounded-[1.2rem] sm:rounded-[1.4rem] flex items-center justify-center shadow-[0_12px_24px_-18px_rgba(15,23,42,0.28)] group-hover:bg-brand-500 group-hover:text-white transition-all duration-500">
                 <Zap size={32} />
               </div>
               <div className="space-y-4 sm:space-y-6">
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-none tracking-tighter uppercase">Strategic AI Architecture</h3>
-                <p className="text-base sm:text-lg lg:text-xl text-slate-400 max-w-2xl font-medium leading-relaxed italic">
-                  We engineer custom retrieval pipelines and specialized AI agents that understand your company's <span className="text-white">unique dialect</span> and historical context.
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-none tracking-tighter uppercase">Company-specific answers</h3>
+                <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl font-medium leading-relaxed">
+                  The system is trained around your content structure, vocabulary and internal process, so answers feel useful instead of generic.
                 </p>
               </div>
             </div>
@@ -80,9 +80,9 @@ const FeaturesGrid: React.FC = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 mb-6 sm:mb-10 bg-gradient-to-br from-brand-500 to-accent-purple rounded-[1.2rem] sm:rounded-[1.8rem] flex items-center justify-center mx-auto text-white shadow-[0_0_40px_rgba(81,47,235,0.3)] transition-all duration-700 group-hover:scale-110">
                   <Globe size={32} />
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 sm:mb-6 tracking-tighter uppercase leading-tight">Omnipresent AI</h3>
-                <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed mb-8 sm:mb-12 italic px-2">
-                  Deploy across web, mobile, and internal portals with <span className="text-white">technical reliability.</span>
+                <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 sm:mb-6 tracking-tighter uppercase leading-tight">Web and mobile ready</h3>
+                <p className="text-base sm:text-lg text-slate-300 font-medium leading-relaxed mb-8 sm:mb-12 px-2">
+                  Teams can access the experience where they already work instead of being forced into one new platform.
                 </p>
              </div>
              <div className="relative w-full max-w-[200px] opacity-30 group-hover:opacity-100 transition-all duration-1000">
@@ -106,9 +106,9 @@ const FeaturesGrid: React.FC = () => {
               <BarChart3 size={32} />
             </div>
             <div className="space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tighter uppercase">Artful Metrics</h3>
-              <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed italic">
-                Visualizing the shift from raw data to <span className="text-white">intelligence.</span>
+              <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tighter uppercase">Clear reporting</h3>
+              <p className="text-base sm:text-lg text-slate-300 font-medium leading-relaxed">
+                Track usage, progress and rollout health without needing another analytics project first.
               </p>
             </div>
           </motion.div>
@@ -123,9 +123,9 @@ const FeaturesGrid: React.FC = () => {
                   <Shield size={32} />
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-3xl sm:text-4xl font-black text-white leading-none tracking-tighter uppercase">Ironclad Vision</h3>
-                  <p className="text-base sm:text-lg lg:text-xl text-slate-400 max-w-xl font-medium leading-relaxed italic">
-                    Ensuring your expansion remains private, secure, and exclusively <span className="text-white">yours.</span>
+                  <h3 className="text-3xl sm:text-4xl font-black text-white leading-none tracking-tighter uppercase">Private by default</h3>
+                  <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-xl font-medium leading-relaxed">
+                    Permissions, governance and deployment choices are handled as part of the product design, not as an afterthought.
                   </p>
                 </div>
               </div>

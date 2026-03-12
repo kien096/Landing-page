@@ -1,15 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Brain,
-  Mail,
-  Phone,
-  Award,
-  ArrowUpRight,
-  Github,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
+import { Mail, Phone, Award, ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -33,8 +24,8 @@ const Footer: React.FC = () => {
                 </span>
               </div>
             </div>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-400 font-medium leading-relaxed max-w-sm italic">
-              "Implementing the artful future of enterprise intelligence."
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 font-medium leading-relaxed max-w-sm">
+              Practical AI products for internal training, knowledge access and outbound workflows.
             </p>
             <div className="flex gap-4">
               <a
@@ -60,7 +51,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-slate-600 mb-10">
-              Artistic Products
+              Products
             </h4>
             <ul className="space-y-4 sm:space-y-6 text-xl sm:text-2xl font-black tracking-tighter uppercase">
               <li>
@@ -96,7 +87,7 @@ const Footer: React.FC = () => {
                   href="#solutions"
                   className="hover:text-brand-500 transition-all"
                 >
-                  Lab Analytics
+                  Analytics
                 </a>
               </li>
               <li>
@@ -104,7 +95,7 @@ const Footer: React.FC = () => {
                   href="#methodology"
                   className="hover:text-brand-500 transition-all"
                 >
-                  Core Systems
+                  Delivery Process
                 </a>
               </li>
             </ul>
@@ -112,27 +103,27 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-slate-600 mb-10">
-              The Lab
+              Company
             </h4>
             <ul className="space-y-4 sm:space-y-6 text-xl sm:text-2xl font-black tracking-tighter uppercase">
               <li>
-                <a href="#" className="hover:text-brand-500 transition-all">
-                  Strategic Matrix
+                <a href="#services" className="hover:text-brand-500 transition-all">
+                  Services
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-500 transition-all">
-                  AI Engineering
+                <a href="#products" className="hover:text-brand-500 transition-all">
+                  Products
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-500 transition-all">
-                  Governance Core
+                <a href="#methodology" className="hover:text-brand-500 transition-all">
+                  Methodology
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-brand-500 transition-all">
-                  Expert Consult
+                <a href="#trust" className="hover:text-brand-500 transition-all">
+                  Customers
                 </a>
               </li>
             </ul>
@@ -140,11 +131,11 @@ const Footer: React.FC = () => {
 
           <div className="space-y-12">
             <h4 className="text-[10px] font-black uppercase tracking-[0.6em] text-slate-600 mb-10">
-              Connect Reality
+              Contact
             </h4>
             <div className="space-y-8">
               <div className="flex items-start sm:items-center gap-4 sm:gap-6 group">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 glass rounded-[1.2rem] sm:rounded-[1.8rem] flex items-center justify-center text-brand-500 shadow-2xl border-white/5 group-hover:bg-brand-500 group-hover:text-white transition-all transform group-hover:scale-110 shrink-0">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 glass rounded-[1.2rem] sm:rounded-[1.8rem] flex items-center justify-center text-brand-500 shadow-[0_12px_24px_-18px_rgba(15,23,42,0.22)] border-white/5 group-hover:bg-brand-500 group-hover:text-white transition-all transform group-hover:scale-110 shrink-0">
                   <Mail size={24} />
                 </div>
                 <div className="flex flex-col">
@@ -160,7 +151,7 @@ const Footer: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-start sm:items-center gap-4 sm:gap-6 group">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 glass rounded-[1.2rem] sm:rounded-[1.8rem] flex items-center justify-center text-accent-cyan shadow-2xl border-white/5 group-hover:bg-accent-cyan group-hover:text-white transition-all transform group-hover:scale-110 shrink-0">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 glass rounded-[1.2rem] sm:rounded-[1.8rem] flex items-center justify-center text-accent-cyan shadow-[0_12px_24px_-18px_rgba(15,23,42,0.22)] border-white/5 group-hover:bg-accent-cyan group-hover:text-white transition-all transform group-hover:scale-110 shrink-0">
                   <Phone size={24} />
                 </div>
                 <div className="flex flex-col">
@@ -177,7 +168,7 @@ const Footer: React.FC = () => {
               <div className="glass px-4 sm:px-6 py-3 rounded-2xl border border-white/5 flex items-center gap-3 w-full sm:w-max shadow-3xl">
                 <Award size={20} className="text-brand-500 animate-pulse" />
                 <span className="text-[9px] font-black uppercase tracking-[0.25em] sm:tracking-[0.3em]">
-                  Top 11 AI Startups Vietnam
+                  Top 11 AI startups in Vietnam
                 </span>
               </div>
             </div>
@@ -187,20 +178,20 @@ const Footer: React.FC = () => {
         <div className="pt-10 sm:pt-16 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-4 sm:gap-8">
           <p className="text-[9px] font-black text-slate-600 uppercase tracking-[0.4em] text-center lg:text-left">
             &copy; {new Date().getFullYear()} MindShift Vietnam.{" "}
-            <span className="text-slate-400">Engineering the Future.</span>
+            <span className="text-slate-400">Built for real-world adoption.</span>
           </p>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-12">
             <a
               href="#"
               className="text-[9px] font-black text-slate-600 uppercase tracking-[0.3em] hover:text-white transition-colors"
             >
-              Privacy Matrix
+              Privacy
             </a>
             <a
               href="#"
               className="text-[9px] font-black text-slate-600 uppercase tracking-[0.3em] hover:text-white transition-colors"
             >
-              Terms of Expansion
+              Terms
             </a>
           </div>
         </div>

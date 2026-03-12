@@ -47,15 +47,15 @@ const UseCases: React.FC = () => {
               whileInView={{ opacity: 1 }}
               className="text-[9px] sm:text-[10px] font-black text-slate-500 uppercase tracking-[0.35em] sm:tracking-[0.5em] mb-6 sm:mb-12"
             >
-              Domain Specialization
+              Common use cases
             </motion.h2>
             <motion.h3 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-4xl sm:text-5xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
             >
-              Crafted for <br />
-              <span className="font-serif-italic text-white/90 italic tracking-normal">High Complexity.</span>
+              Teams with complex <br />
+              <span className="font-serif-italic text-white/90 italic tracking-normal">training and knowledge.</span>
             </motion.h3>
           </div>
           <motion.div 
@@ -63,8 +63,8 @@ const UseCases: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             className="lg:w-1/3 p-6 sm:p-8 lg:p-10 glass rounded-[2rem] sm:rounded-[3.5rem] border-white/5 text-center"
           >
-            <p className="text-base sm:text-lg font-bold text-slate-400 leading-relaxed italic">
-              "We don't just build for industries; we expand their <span className="text-white">creative and technical</span> horizons."
+            <p className="text-base sm:text-lg font-semibold text-slate-300 leading-relaxed">
+              We work best where teams need accurate answers, repeatable training and better consistency across locations.
             </p>
           </motion.div>
         </div>
