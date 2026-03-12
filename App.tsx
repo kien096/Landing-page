@@ -1,29 +1,36 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import FeaturesGrid from './components/Problems'; // Note: Renaming file content but keeping import simple for this xml context, effectively replacing 'Problems'
+import Services from './components/Services';
+import Methodology from './components/Methodology';
+import ProductHighlights from './components/ProductHighlights';
+import FeaturesGrid from './components/FeaturesGrid'; 
 import Solution from './components/Solution';
 import UseCases from './components/UseCases';
 import Stats from './components/Stats';
-import Dashboard from './components/Dashboard';
 import Team from './components/Team';
 import Footer from './components/Footer';
+import ContactForm from './components/ContactForm';
 
 const App: React.FC = () => {
+  const [isContactOpen, setIsContactOpen] = React.useState(false);
+
   return (
-    <div className="min-h-screen bg-white font-inter">
-      <Header />
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-brand-500/30 selection:text-white">
+      <Header onOrderClick={() => setIsContactOpen(true)} />
       <main>
         <Hero />
-        {/* Replaces the negative 'Problems' section with positive 'FeaturesGrid' */}
+        <Services />
+        <Methodology />
+        <ProductHighlights />
         <FeaturesGrid /> 
         <Solution />
         <UseCases />
         <Stats />
-        <Dashboard />
         <Team />
       </main>
       <Footer />
+      <ContactForm isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
     </div>
   );
 };

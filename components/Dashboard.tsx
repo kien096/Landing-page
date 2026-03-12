@@ -14,72 +14,85 @@ const data: ChartData[] = [
 
 const Dashboard: React.FC = () => {
   return (
-    <section id="analytics" className="py-20 bg-slate-50">
+    <section id="analytics" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
           
-          <div className="md:w-1/2">
-            <span className="text-blue-600 font-bold tracking-wider uppercase text-sm">Comprehensive Analytics</span>
-            <h2 className="text-3xl font-bold mt-2 mb-6 text-slate-900">
-              Where Learning Meets <br/>Measurable Business Impact
-            </h2>
-            <p className="text-slate-600 mb-8 leading-relaxed">
-              Managers can accurately assess learners' knowledge status and training quality. Our dashboards link learning data directly to KPIs.
+          <div className="lg:w-1/2">
+            <h2 className="text-base font-bold text-brand-400 uppercase tracking-widest mb-4">Strategic Impact</h2>
+            <h3 className="text-4xl lg:text-5xl font-bold font-display text-white mb-8">
+              Where Strategy Meets <br/><span className="text-gradient">Measurable Result.</span>
+            </h3>
+            <p className="text-xl text-slate-400 mb-10 leading-relaxed">
+              Our implementation doesn't stop at deployment. We provide real-time visibility into how AI is shifting your company metrics—from knowledge retention to actual frontline performance.
             </p>
             
-            <ul className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                "Track employee knowledge gaps in real-time",
-                "Visualize campaign performance trends",
-                "Correlate training completion with productivity metrics",
-                "Export reports for compliance and auditing"
+                { title: "Knowledge Status", desc: "Real-time gap analysis" },
+                { title: "Engagement AI", desc: "Deep behavior insights" },
+                { title: "Performance Lift", desc: "Direct KPI correlation" },
+                { title: "Compliance Core", desc: "Full audit readiness" }
               ].map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
-                  <span className="text-slate-700">{item}</span>
-                </li>
+                <div key={index} className="flex flex-col p-4 glass rounded-xl border border-white/5">
+                   <h4 className="font-bold text-white text-sm mb-1">{item.title}</h4>
+                   <p className="text-xs text-slate-500">{item.desc}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <div className="md:w-1/2 w-full">
-            <div className="bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
-              <div className="flex justify-between items-center mb-6">
-                <h3 className="font-bold text-slate-800">Knowledge vs Performance</h3>
-                <div className="flex gap-2 text-xs">
-                   <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-blue-500"></span> Knowledge</span>
-                   <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-green-500"></span> Performance</span>
-                </div>
+          <div className="lg:w-1/2 w-full">
+            <div className="glass p-8 rounded-3xl border border-white/5 shadow-2xl relative">
+              <div className="absolute top-0 right-0 p-8">
+                 <div className="px-3 py-1 bg-brand-500/10 text-brand-400 text-[10px] font-bold rounded-full border border-brand-500/20">
+                    LIVE DATA
+                 </div>
               </div>
               
-              <div className="h-[300px] w-full">
+              <div className="mb-8">
+                <h4 className="font-bold text-white mb-1">Knowledge vs Performance</h4>
+                <p className="text-xs text-slate-500">Enterprise Adoption Velocity</p>
+              </div>
+              
+              <div className="h-[350px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart
                     data={data}
-                    margin={{ top: 10, right: 10, left: 0, bottom: 0 }}
+                    margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
                   >
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                    <XAxis dataKey="name" tick={{fontSize: 12, fill: '#94a3b8'}} axisLine={false} tickLine={false} />
-                    <YAxis tick={{fontSize: 12, fill: '#94a3b8'}} axisLine={false} tickLine={false} />
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.05)" />
+                    <XAxis dataKey="name" tick={{fontSize: 10, fill: '#64748b'}} axisLine={false} tickLine={false} />
+                    <YAxis tick={{fontSize: 10, fill: '#64748b'}} axisLine={false} tickLine={false} />
                     <Tooltip 
-                      contentStyle={{borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'}}
+                      contentStyle={{backgroundColor: '#0f172a', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.5)'}}
+                      itemStyle={{fontSize: '12px', fontWeight: 'bold'}}
                     />
-                    <Area type="monotone" dataKey="knowledge" stroke="#3b82f6" fillOpacity={1} fill="url(#colorKnowledge)" strokeWidth={3} />
-                    <Area type="monotone" dataKey="performance" stroke="#22c55e" fillOpacity={1} fill="url(#colorPerformance)" strokeWidth={3} />
+                    <Area type="monotone" dataKey="knowledge" stroke="#38bdf8" fillOpacity={1} fill="url(#colorKnowledge)" strokeWidth={3} />
+                    <Area type="monotone" dataKey="performance" stroke="#818cf8" fillOpacity={1} fill="url(#colorPerformance)" strokeWidth={3} />
                     <defs>
                       <linearGradient id="colorKnowledge" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.2}/>
-                        <stop offset="95%" stopColor="#3b82f6" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="#38bdf8" stopOpacity={0.2}/>
+                        <stop offset="95%" stopColor="#38bdf8" stopOpacity={0}/>
                       </linearGradient>
                       <linearGradient id="colorPerformance" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%" stopColor="#22c55e" stopOpacity={0.2}/>
-                        <stop offset="95%" stopColor="#22c55e" stopOpacity={0}/>
+                        <stop offset="5%" stopColor="#818cf8" stopOpacity={0.2}/>
+                        <stop offset="95%" stopColor="#818cf8" stopOpacity={0}/>
                       </linearGradient>
                     </defs>
                   </AreaChart>
                 </ResponsiveContainer>
+              </div>
+
+              <div className="mt-8 flex gap-6 border-t border-white/5 pt-6">
+                 <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-brand-400"></div>
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Knowledge Efficiency</span>
+                 </div>
+                 <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-indigo-400"></div>
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Performance Lift</span>
+                 </div>
               </div>
             </div>
           </div>

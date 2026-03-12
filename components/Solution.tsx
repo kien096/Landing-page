@@ -1,129 +1,167 @@
 import React from 'react';
-import { Check, UploadCloud, BrainCircuit, LineChart } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Check, Rocket, Cpu, ShieldCheck, Zap } from 'lucide-react';
 
 const Solution: React.FC = () => {
   return (
-    <section id="solutions" className="py-24 overflow-hidden bg-white">
-      <div className="container mx-auto px-6 space-y-32">
+    <section id="solutions-detail" className="py-48 relative bg-black text-white overflow-hidden">
+      <div className="container mx-auto px-6 space-y-64">
         
-        {/* Feature 1: Ingestion */}
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2">
-            <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-              <UploadCloud size={24} />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-              Don't build courses from scratch. <br />
-              <span className="text-blue-600">Let AI do it.</span>
-            </h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Stop wasting weeks on instructional design. Upload your existing PDF manuals, PowerPoints, or video recordings. MindShift's AI engine instantly converts them into engaging, gamified lessons.
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <div className="mt-1 bg-green-100 p-1 rounded-full text-green-600"><Check size={14} /></div>
-                <span className="text-slate-700 font-medium">Parse complex technical SOPs instantly</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="mt-1 bg-green-100 p-1 rounded-full text-green-600"><Check size={14} /></div>
-                <span className="text-slate-700 font-medium">Auto-generate quizzes and flashcards</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="mt-1 bg-green-100 p-1 rounded-full text-green-600"><Check size={14} /></div>
-                <span className="text-slate-700 font-medium">Keep content synced with your documents</span>
-              </li>
-            </ul>
+        {/* Feature 1: The Integration Layer */}
+        <div className="flex flex-col lg:flex-row items-center gap-24">
+          <div className="lg:w-1/2 space-y-12">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="w-16 h-16 glass rounded-[1.5rem] flex items-center justify-center text-brand-500 shadow-2xl border-white/10"
+            >
+              <Cpu size={32} />
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-6xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
+            >
+              Bespoke <br />
+              <span className="font-serif-italic text-brand-500 italic tracking-normal">AI Engines.</span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-slate-400 leading-relaxed font-medium italic"
+            >
+              We craft specialized integration layers that bridge the gap between abstract LLM potential and <span className="text-white">concrete enterprise reality.</span>
+            </motion.p>
+            <motion.ul 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="space-y-6"
+            >
+              {[
+                "Custom RAG Architecture",
+                "Private Cloud Orchestration",
+                "Automated Contextual Indexing",
+                "Artistic UI/UX For AI Workflows"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-5 group">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white flex items-center justify-center shadow-[0_0_15px_rgba(81,47,235,0.4)] transform group-hover:scale-110 transition-transform">
+                    <Check size={14} />
+                  </div>
+                  <span className="text-xl font-black text-white/90 tracking-tight">{item}</span>
+                </li>
+              ))}
+            </motion.ul>
           </div>
-          <div className="lg:w-1/2 bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-xl">
-            {/* Abstract visual for file upload -> Course */}
-            <div className="flex items-center justify-between gap-4">
-               <div className="w-24 h-32 bg-white border border-slate-200 rounded-lg shadow-sm flex flex-col items-center justify-center p-2">
-                  <div className="w-8 h-1 bg-slate-200 mb-2 rounded"></div>
-                  <div className="w-12 h-1 bg-slate-200 mb-1 rounded"></div>
-                  <div className="w-12 h-1 bg-slate-200 mb-1 rounded"></div>
-                  <span className="text-[10px] text-slate-400 mt-2">PDF</span>
-               </div>
-               <div className="flex-1 h-px bg-slate-300 relative">
-                  <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 bg-blue-600 text-white p-2 rounded-full">
-                     <BrainCircuit size={16} />
+          
+          <div className="lg:w-1/2 relative group">
+            <motion.div 
+               initial={{ opacity: 0, rotate: 5, scale: 0.95 }}
+               whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
+               transition={{ duration: 1 }}
+               className="glass p-6 rounded-[4rem] relative z-10 border-white/10 overflow-hidden shadow-[0_60px_120px_-20px_rgba(81,47,235,0.1)] hover:border-brand-500/30 transition-all duration-700"
+            >
+               <div className="bg-slate-900/40 rounded-[3.5rem] p-12 flex flex-col items-center gap-12 overflow-hidden">
+                  <div className="flex items-center justify-center gap-10 w-full">
+                     <div className="w-20 h-28 glass rounded-2xl border-white/5 flex flex-col items-center justify-center gap-2">
+                        <div className="w-10 h-1 bg-white/10 rounded"></div>
+                        <div className="w-10 h-1 bg-white/5 rounded"></div>
+                        <span className="text-[10px] font-black text-slate-500 mt-3 uppercase tracking-widest">Data Lab</span>
+                     </div>
+                     <div className="flex-1 h-px bg-gradient-to-r from-transparent via-brand-500 to-transparent relative">
+                        <motion.div 
+                          animate={{ x: [-15, 15, -15] }}
+                          transition={{ duration: 3, repeat: Infinity }}
+                          className="absolute top-1/2 left-1/2 -track-x-1/2 -translate-y-1/2 p-3 bg-brand-500 text-white rounded-full shadow-[0_0_30px_#512FEB]"
+                        >
+                           <Zap size={20} />
+                        </motion.div>
+                     </div>
+                     <div className="w-20 h-28 bg-white rounded-2xl flex flex-col items-center justify-center gap-2 shadow-2xl">
+                        <Cpu size={32} className="text-brand-500 animate-pulse" />
+                        <span className="text-[9px] font-black text-slate-900 px-2 py-1 bg-brand-50 rounded-full">CORE</span>
+                     </div>
                   </div>
                </div>
-               <div className="w-24 h-32 bg-blue-600 text-white rounded-lg shadow-lg flex flex-col items-center justify-center p-2">
-                  <div className="w-8 h-8 rounded-full border-2 border-white/30 mb-2"></div>
-                  <span className="text-[10px] font-bold">Course Ready</span>
-               </div>
-            </div>
-            <div className="mt-8 text-center text-sm text-slate-500 italic">
-               "Converted 'Safety Manual 2024' in 32 seconds..."
-            </div>
+            </motion.div>
           </div>
         </div>
 
-        {/* Feature 2: Contextual AI (Reversed) */}
-        <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
-          <div className="lg:w-1/2">
-             <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
-              <BrainCircuit size={24} />
+        {/* Feature 2: Strategic Security */}
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-24">
+          <div className="lg:w-1/2 space-y-12">
+            <motion.div 
+               initial={{ opacity: 0, scale: 0.8 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               className="w-16 h-16 glass rounded-[1.5rem] flex items-center justify-center text-accent-cyan shadow-2xl border-white/10"
+            >
+              <ShieldCheck size={32} />
+            </motion.div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-6xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
+            >
+              Ethereal <br />
+              <span className="font-serif-italic text-accent-cyan italic tracking-normal">Security.</span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-slate-400 leading-relaxed font-medium italic"
+            >
+              Protection that is invisible yet absolute. We implement local inference and private VPC tunnels to ensure your vision remains <span className="text-white">exclusively yours.</span>
+            </motion.p>
+            <div className="grid grid-cols-2 gap-6">
+               <motion.div 
+                 whileHover={{ y: -8 }}
+                 className="glass p-10 rounded-[3rem] border-white/5 hover:border-brand-500/30 transition-all duration-500"
+               >
+                  <h4 className="text-brand-500 font-black text-[10px] mb-4 uppercase tracking-[0.4em]">Infrastructure</h4>
+                  <p className="text-white font-black text-2xl leading-tight tracking-tight uppercase">Private <br />Core</p>
+               </motion.div>
+               <motion.div 
+                 whileHover={{ y: -8 }}
+                 className="glass p-10 rounded-[3rem] border-white/5 hover:border-accent-purple/30 transition-all duration-500"
+               >
+                  <h4 className="text-accent-purple font-black text-[10px] mb-4 uppercase tracking-[0.4em]">Governance</h4>
+                  <p className="text-white font-black text-2xl leading-tight tracking-tight uppercase">ISO-Deep <br />Ready</p>
+               </motion.div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-              A Personal "Mind Coach" <br />
-              <span className="text-purple-600">for every employee.</span>
-            </h2>
-            <p className="text-lg text-slate-600 mb-8">
-              It's not just a search bar. It's a conversational AI that understands your company's specific context. Employees can ask "How do I process a refund?" and get an exact answer based on your guidelines, not generic internet data.
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <div className="mt-1 bg-green-100 p-1 rounded-full text-green-600"><Check size={14} /></div>
-                <span className="text-slate-700 font-medium">RAG Technology ensures 100% accurate answers</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="mt-1 bg-green-100 p-1 rounded-full text-green-600"><Check size={14} /></div>
-                <span className="text-slate-700 font-medium">Role-play simulations for sales & support</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="mt-1 bg-green-100 p-1 rounded-full text-green-600"><Check size={14} /></div>
-                <span className="text-slate-700 font-medium">24/7 Availability for deskless workers</span>
-              </li>
-            </ul>
           </div>
+          
           <div className="lg:w-1/2">
-             <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
-                <div className="h-[32px] w-[3px] bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-                <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-                <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-                <div className="h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-                <div className="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white relative flex flex-col">
-                   {/* Mobile Screen Content */}
-                   <div className="bg-slate-50 p-4 border-b">
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white text-xs">AI</div>
-                        <div className="text-sm font-bold text-slate-800">Mind Coach</div>
+             <motion.div 
+               initial={{ opacity: 0, scale: 0.95 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               className="relative p-6 glass rounded-[4rem] shadow-3xl border-white/10 overflow-hidden group"
+             >
+                <div className="relative z-10 bg-white/[0.02] rounded-[3.5rem] p-20 border border-white/5 text-center">
+                   <div className="flex flex-col gap-10 items-center">
+                      <div className="inline-flex px-5 py-2 bg-brand-500/10 text-brand-400 text-[10px] font-black rounded-full border border-brand-500/20 items-center gap-2 tracking-[0.3em]">
+                         <div className="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></div>
+                         SYSTEM INTEGRITY ACTIVE
                       </div>
-                   </div>
-                   <div className="flex-1 p-4 space-y-4 overflow-hidden">
-                      <div className="bg-slate-100 p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-sm text-slate-700">
-                        How can I help you today?
+                      <div className="space-y-10 w-full max-w-sm">
+                        {[1, 2, 3].map((i) => (
+                           <div key={i} className="h-0.5 bg-white/5 rounded-full relative overflow-hidden">
+                              <motion.div 
+                                animate={{ left: ["-100%", "100%"] }}
+                                transition={{ duration: 4, repeat: Infinity, delay: i * 0.7 }}
+                                className="absolute top-0 bottom-0 w-1/3 bg-brand-500 opacity-40 shadow-[0_0_15px_#512FEB]"
+                              ></motion.div>
+                           </div>
+                        ))}
                       </div>
-                      <div className="bg-blue-600 text-white p-3 rounded-tl-xl rounded-bl-xl rounded-br-xl text-sm ml-auto max-w-[80%]">
-                        What's the procedure for heavy machinery shutdown?
-                      </div>
-                      <div className="bg-slate-100 p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-sm text-slate-700">
-                        Based on <strong>Protocol 7A</strong>:
-                        <ol className="list-decimal ml-4 mt-2 space-y-1">
-                          <li>Turn off main power.</li>
-                          <li>Engage emergency brake.</li>
-                          <li>Log time in Logbook B.</li>
-                        </ol>
-                      </div>
-                   </div>
-                   <div className="p-3 border-t">
-                      <div className="h-10 bg-slate-100 rounded-full w-full"></div>
+                      <p className="text-[10px] font-black text-slate-600 uppercase tracking-[0.6em]">VULNERABILITY: <span className="text-white">0.00%</span></p>
                    </div>
                 </div>
-            </div>
+             </motion.div>
           </div>
         </div>
+
       </div>
     </section>
   );

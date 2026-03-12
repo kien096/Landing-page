@@ -1,5 +1,6 @@
-import React from "react";
-import { Quote, Star } from "lucide-react";
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Quote, Star, Sparkles } from "lucide-react";
 
 const Testimonials: React.FC = () => {
   const reviews = [
@@ -8,144 +9,117 @@ const Testimonials: React.FC = () => {
       role: "Manufacturing Director",
       name: "Nguyen Duc Vu",
       content:
-        "Digitizing 20 years of manufacturing SOPs used to be a nightmare. MindShift helped us standardise safety training across 7 factories. Worker compliance improved by 40% in just two months.",
+        "Digitizing 20 years of manufacturing SOPs used to be a nightmare. MindShift helped us standardise safety training across 7 factories. Worker compliance improved by 40%.",
       initials: "DV",
-      color: "bg-blue-600",
+      color: "bg-brand-500",
+      tag: "Manufacturing"
     },
     {
-      company: "BanhMyBa (Czech Republic)",
+      company: "BanhMyBa",
       role: "Founder",
       name: "Khang",
       content:
-        "Managing quality across our restaurant chain in Europe from Vietnam was a challenge. MindShift ensures every chef in Prague knows the exact recipes and service standards through the mobile app.",
+        "MindShift ensures every chef in Prague knows the exact recipes and service standards through the mobile app. Managing quality from Vietnam is now effortless.",
       initials: "K",
-      color: "bg-orange-500",
+      color: "bg-purple-600",
+      tag: "F&B"
     },
     {
       company: "Abbey Vietnam",
       role: "HR Manager",
       name: "Hue Ha",
       content:
-        "Onboarding new sales staff used to take a month. With the AI Coach feature, new hires can role-play sales scenarios instantly. Time-to-productivity has dropped to just 5 days.",
+        "Onboarding sales staff used to take a month. With the AI Coach, new hires role-play scenarios instantly. Time-to-productivity has dropped to just 5 days.",
       initials: "HH",
-      color: "bg-indigo-600",
+      color: "bg-blue-600",
+      tag: "Corporate"
     },
     {
       company: "Polyfill JSC",
       role: "HR Manager",
       name: "Pham Minh",
       content:
-        "The ability to instantly turn complex technical filler masterbatch manuals into simple quizzes is a game changer. Our engineering team actually enjoys the training now.",
+        "Turning complex technical manuals into simple quizzes is a game changer. Our engineering team actually enjoys the training now. Artful implementation at its best.",
       initials: "PL",
-      color: "bg-green-600",
+      color: "bg-slate-800",
+      tag: "Technical"
     },
   ];
 
-  // Triplicate the reviews array to ensure smooth infinite scrolling
   const scrollingReviews = [...reviews, ...reviews, ...reviews];
 
   return (
-    <section
-      id="reviews"
-      className="py-24 bg-white border-t border-slate-100 overflow-hidden"
-    >
-      <style>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
-        }
-        .animate-scroll {
-          animation: scroll 60s linear infinite;
-        }
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
-
-      <div className="container mx-auto px-6 mb-16 text-center">
-        <span className="text-blue-600 font-bold tracking-wider uppercase text-sm">
-          Customer Stories
-        </span>
-        <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mt-3 mb-6">
-          Trusted by Market Leaders
-        </h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          From heavy manufacturing to international F&B chains, MindShift is
-          powering the workforce behind Vietnam's top enterprises.
-        </p>
+    <section id="trust" className="py-48 relative overflow-hidden bg-black text-white">
+      <div className="container mx-auto px-6 mb-32 text-center">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className="inline-flex items-center gap-4 px-8 py-3 glass rounded-full shadow-2xl border-white/10 text-[10px] font-black tracking-[0.5em] text-brand-500 mb-12 uppercase"
+        >
+          <Sparkles size={18} className="text-accent-purple" />
+          The Expansion Matrix
+        </motion.div>
+        <motion.h3 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-6xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
+        >
+          Forging <br />
+          <span className="font-serif-italic text-white/90 italic tracking-normal">Immortal</span> Trust.
+        </motion.h3>
       </div>
 
-      {/* Infinite Scroll Marquee */}
-      <div className="relative w-full">
-        {/* Gradient Masks for fading effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+      <div className="relative w-full overflow-hidden pb-32">
+        <div className="absolute left-0 top-0 bottom-0 w-[300px] bg-gradient-to-r from-black via-black/90 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-[300px] bg-gradient-to-l from-black via-black/90 to-transparent z-10 pointer-events-none"></div>
 
-        <div className="flex w-max animate-scroll py-4">
+        <motion.div 
+          animate={{ x: ["0%", "-33.333%"] }}
+          transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+          className="flex w-max"
+        >
           {scrollingReviews.map((review, idx) => (
             <div
               key={idx}
-              className="w-[350px] md:w-[450px] mx-4 flex-shrink-0 bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 hover:-translate-y-2 transition-all duration-300 group cursor-default"
+              className="w-[500px] md:w-[600px] mx-10 flex-shrink-0 glass p-16 rounded-[5rem] border-white/5 hover:bg-white/[0.04] hover:border-brand-500/20 transition-all duration-1000 group cursor-default shadow-3xl"
             >
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex gap-1 text-yellow-400">
+              <div className="flex justify-between items-start mb-16">
+                <div className="flex gap-2 text-brand-500">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} fill="currentColor" />
+                    <Star key={i} size={18} fill="currentColor" />
                   ))}
                 </div>
-                <Quote
-                  size={32}
-                  className="text-slate-200 group-hover:text-blue-200 transition-colors"
-                  fill="currentColor"
-                />
+                <Quote size={60} className="text-white/[0.02] group-hover:text-brand-500/10 transition-all transform group-hover:-rotate-12 duration-1000" fill="currentColor" />
               </div>
 
-              <p className="text-slate-700 text-base md:text-lg leading-relaxed mb-6 line-clamp-4">
+              <p className="text-slate-300 text-2xl leading-relaxed mb-16 font-medium italic tracking-tight">
                 "{review.content}"
               </p>
 
-              <div className="flex items-center gap-4 mt-auto">
-                <div
-                  className={`w-12 h-12 ${review.color} rounded-full flex items-center justify-center text-white font-bold text-sm tracking-widest shadow-md`}
-                >
+              <div className="flex items-center gap-8 mt-auto">
+                <div className={`w-20 h-20 ${review.color} rounded-[2rem] flex items-center justify-center text-white font-black text-2xl shadow-xl transform transition-transform`}>
                   {review.initials}
                 </div>
-                <div>
-                  <div className="font-bold text-slate-900 text-sm">
-                    {review.name}
-                  </div>
-                  <div className="text-xs text-slate-500 font-medium">
-                    {review.role}
-                  </div>
-                  <div className="text-xs font-bold text-blue-600 mt-0.5">
-                    {review.company}
+                <div className="space-y-1">
+                  <div className="font-black text-white text-2xl tracking-tighter">{review.name}</div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em] mb-1 leading-none">{review.role}</span>
+                    <span className="text-[11px] font-black text-brand-500 uppercase tracking-[0.2em]">{review.company}</span>
                   </div>
                 </div>
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Partner Logos/Names */}
-      <div className="container mx-auto px-6 mt-20">
-        <p className="text-center text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">
-          Proudly partnering with
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          <span className="text-lg md:text-xl font-black text-slate-800 uppercase tracking-tight">
-            EuroPlast
-          </span>
-          <span className="text-lg md:text-xl font-black text-slate-800 uppercase tracking-tight">
-            Abbey Vietnam
-          </span>
-          <span className="text-lg md:text-xl font-black text-slate-800 uppercase tracking-tight">
-            BanhMyBa
-          </span>
-          <span className="text-lg md:text-xl font-black text-slate-800 uppercase tracking-tight">
-            POLYFILL
-          </span>
-        </div>
+      <div className="container mx-auto px-6 mt-32">
+         <div className="flex flex-wrap justify-center items-center gap-16 lg:gap-36 opacity-10 grayscale Contrast-200 hover:opacity-100 hover:grayscale-0 transition-all duration-2000">
+           <span className="text-4xl font-black text-white italic tracking-tighter uppercase whitespace-nowrap">EuroPlast</span>
+           <span className="text-4xl font-black text-white italic tracking-tighter uppercase whitespace-nowrap">Abbey Vietnam</span>
+           <span className="text-4xl font-black text-white italic tracking-tighter uppercase whitespace-nowrap">BanhMyBa</span>
+           <span className="text-4xl font-black text-white italic tracking-tighter uppercase whitespace-nowrap">POLYFILL</span>
+         </div>
       </div>
     </section>
   );
