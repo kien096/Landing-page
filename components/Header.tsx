@@ -16,17 +16,24 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        isScrolled ? "py-4" : "py-8"
+        isScrolled ? "py-3 sm:py-4" : "py-4 sm:py-6 lg:py-8"
       }`}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className={`flex items-center justify-between glass px-10 py-5 rounded-[3rem] border transition-all duration-500 ${
+          className={`flex items-center justify-between gap-3 glass px-4 py-3 sm:px-6 sm:py-4 lg:px-10 lg:py-5 rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem] border transition-all duration-500 ${
             isScrolled
               ? "border-white/20 bg-black/60 shadow-2xl scale-[0.98]"
               : "border-white/5 bg-transparent"
@@ -38,10 +45,10 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick }) => {
               <Brain size={28} />
             </div> */}
             <div className="flex flex-col">
-              <span className="text-3xl font-black font-display leading-[0.8] tracking-tighter text-white">
+              <span className="text-2xl sm:text-3xl font-black font-display leading-[0.8] tracking-tighter text-white">
                 MindShift
               </span>
-              <span className="text-[10px] font-black tracking-[0.4em] uppercase text-brand-400 mt-1">
+              <span className="text-[9px] sm:text-[10px] font-black tracking-[0.3em] sm:tracking-[0.4em] uppercase text-brand-400 mt-1">
                 Enterprise AI
               </span>
             </div>
@@ -62,19 +69,27 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick }) => {
           </nav>
 
           {/* CTA */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-2 sm:gap-4 lg:gap-8">
             <button
               onClick={onOrderClick}
-              className="group relative overflow-hidden bg-white text-black px-10 py-4 rounded-[1.8rem] font-black text-[10px] uppercase tracking-[0.3em] transition-all hover:bg-brand-500 hover:text-white shadow-xl"
+              className="hidden sm:inline-flex group relative overflow-hidden bg-white text-black px-6 py-3 lg:px-10 lg:py-4 rounded-[1.2rem] lg:rounded-[1.8rem] font-black text-[10px] uppercase tracking-[0.25em] lg:tracking-[0.3em] transition-all hover:bg-brand-500 hover:text-white shadow-xl"
             >
               <span className="relative z-10">Order Now</span>
               <div className="absolute inset-0 bg-brand-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
             </button>
             <button
-              className="lg:hidden text-white w-10 h-10 flex items-center justify-center glass rounded-full"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={onOrderClick}
+              className="sm:hidden group relative overflow-hidden bg-white text-black px-4 py-2.5 rounded-full font-black text-[9px] uppercase tracking-[0.2em] transition-all hover:bg-brand-500 hover:text-white shadow-xl"
             >
-              <Menu size={24} />
+              <span className="relative z-10">Order</span>
+              <div className="absolute inset-0 bg-brand-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+            </button>
+            <button
+              className="lg:hidden text-white w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center glass rounded-full"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </motion.div>
@@ -87,26 +102,26 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick }) => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-6 top-6 bottom-6 glass border-white/10 z-[60] flex flex-col p-12 rounded-[4rem] bg-black/95 backdrop-blur-3xl shadow-[0_0_100px_rgba(0,0,0,1)]"
+            className="fixed inset-x-4 top-4 bottom-4 sm:inset-x-6 sm:top-6 sm:bottom-6 glass border-white/10 z-[60] flex flex-col p-6 sm:p-10 rounded-[2.5rem] sm:rounded-[4rem] bg-black/95 backdrop-blur-3xl shadow-[0_0_100px_rgba(0,0,0,1)]"
           >
-            <div className="flex justify-between items-center mb-16">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-brand-500 rounded-2xl flex items-center justify-center text-white">
-                  <Brain size={28} />
+            <div className="flex justify-between items-center gap-4 mb-10 sm:mb-16">
+              <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 bg-brand-500 rounded-2xl flex items-center justify-center text-white shrink-0">
+                  <Brain size={22} className="sm:w-7 sm:h-7" />
                 </div>
-                <span className="text-3xl font-black font-display text-white tracking-tighter">
+                <span className="text-2xl sm:text-3xl font-black font-display text-white tracking-tighter truncate">
                   MindShift
                 </span>
               </div>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-white w-14 h-14 glass rounded-full flex items-center justify-center border-white/20"
+                className="text-white w-11 h-11 sm:w-14 sm:h-14 glass rounded-full flex items-center justify-center border-white/20 shrink-0"
               >
-                <X size={32} />
+                <X size={22} className="sm:w-8 sm:h-8" />
               </button>
             </div>
 
-            <nav className="flex flex-col gap-10">
+            <nav className="flex flex-col gap-5 sm:gap-8">
               {["Services", "Products", "Methodology", "Trust"].map(
                 (item, i) => (
                   <motion.a
@@ -116,7 +131,7 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick }) => {
                     key={item}
                     href={`#${item.toLowerCase()}`}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-6xl font-black text-white hover:text-brand-500 transition-colors tracking-tighter"
+                    className="text-3xl sm:text-5xl lg:text-6xl font-black text-white hover:text-brand-500 transition-colors tracking-tighter"
                   >
                     {item}
                   </motion.a>
@@ -124,16 +139,16 @@ const Header: React.FC<HeaderProps> = ({ onOrderClick }) => {
               )}
             </nav>
 
-            <div className="mt-auto space-y-6">
+            <div className="mt-auto space-y-4 sm:space-y-6">
               <div className="h-px bg-white/10"></div>
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onOrderClick();
                 }}
-                className="w-full bg-brand-500 text-white py-8 rounded-[2.5rem] font-black text-2xl flex items-center justify-center gap-6 shadow-2xl hover:scale-[1.02] transition-transform"
+                className="w-full bg-brand-500 text-white py-5 sm:py-7 rounded-[1.8rem] sm:rounded-[2.5rem] font-black text-base sm:text-2xl flex items-center justify-center gap-3 sm:gap-6 shadow-2xl hover:scale-[1.02] transition-transform"
               >
-                Order Now <ArrowRight size={32} />
+                Order Now <ArrowRight size={20} className="sm:w-8 sm:h-8" />
               </button>
             </div>
           </motion.div>

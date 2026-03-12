@@ -31,23 +31,23 @@ const Methodology: React.FC = () => {
   ];
 
   return (
-    <section id="methodology" className="py-48 relative overflow-hidden bg-black text-white">
+    <section id="methodology" className="py-24 sm:py-32 lg:py-48 relative overflow-hidden bg-black text-white">
       <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent hidden lg:block"></div>
 
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-end justify-between mb-32 gap-12">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between mb-16 sm:mb-24 lg:mb-32 gap-8 sm:gap-12">
           <div className="max-w-4xl">
             <motion.h2 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="text-[10px] font-black text-slate-500 uppercase tracking-[0.8em] mb-12"
+              className="text-[9px] sm:text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] sm:tracking-[0.8em] mb-6 sm:mb-12"
             >
               The Expansion Framework
             </motion.h2>
             <motion.h3 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-6xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
+              className="text-4xl sm:text-5xl lg:text-7xl font-black font-display leading-[0.9] tracking-tighter"
             >
               Articulately <br />
               <span className="font-serif-italic text-brand-500 italic tracking-normal">Engineered.</span>
@@ -56,13 +56,13 @@ const Methodology: React.FC = () => {
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="lg:w-1/3 text-xl font-medium text-slate-400 italic mb-8 leading-relaxed"
+            className="lg:w-1/3 text-base sm:text-lg lg:text-xl font-medium text-slate-400 italic mb-0 lg:mb-8 leading-relaxed"
           >
             "A repeatable matrix that converts enterprise complexity into <span className="text-white">creative momentum.</span>"
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 relative">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 relative">
           {steps.map((step, idx) => (
             <motion.div 
               key={idx}
@@ -70,20 +70,20 @@ const Methodology: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.15 }}
               whileHover={{ backgroundColor: "rgba(255,255,255,0.03)" }}
-              className="relative p-12 border-l border-white/10 group transition-all duration-700"
+              className="relative p-8 sm:p-10 lg:p-12 border border-white/10 lg:border-y-0 lg:border-r-0 lg:border-l group rounded-[2rem] sm:rounded-[3rem] lg:rounded-none transition-all duration-700"
             >
-              <div className="absolute top-0 left-[-1px] w-[2px] h-0 bg-brand-500 group-hover:h-full transition-all duration-1000"></div>
+              <div className="absolute top-0 left-0 w-0 h-[2px] lg:w-[2px] lg:h-0 bg-brand-500 group-hover:w-full lg:group-hover:w-[2px] lg:group-hover:h-full transition-all duration-1000"></div>
               
-              <div className="text-[100px] font-black text-white/[0.02] absolute top-[-40px] right-8 -z-10 group-hover:text-brand-500/10 transition-all duration-1000 select-none">
+              <div className="text-6xl sm:text-8xl lg:text-[100px] font-black text-white/[0.02] absolute top-3 sm:top-0 lg:top-[-40px] right-6 sm:right-8 -z-10 group-hover:text-brand-500/10 transition-all duration-1000 select-none">
                 {step.step}
               </div>
 
-              <div className="w-20 h-20 glass rounded-[1.8rem] flex items-center justify-center text-white mb-12 group-hover:bg-brand-500 group-hover:text-white transition-all duration-700 border-white/5 shadow-3xl group-hover:scale-110 group-hover:rotate-12">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 glass rounded-[1.2rem] sm:rounded-[1.8rem] flex items-center justify-center text-white mb-8 sm:mb-12 group-hover:bg-brand-500 group-hover:text-white transition-all duration-700 border-white/5 shadow-3xl group-hover:scale-110 group-hover:rotate-12">
                 {step.icon}
               </div>
               
-              <h3 className="text-3xl font-black text-white mb-6 tracking-tighter uppercase">{step.title}</h3>
-              <p className="text-lg text-slate-400 font-medium leading-relaxed italic pr-4">{step.description}</p>
+              <h3 className="text-2xl sm:text-3xl font-black text-white mb-4 sm:mb-6 tracking-tighter uppercase">{step.title}</h3>
+              <p className="text-base sm:text-lg text-slate-400 font-medium leading-relaxed italic pr-0 sm:pr-4">{step.description}</p>
             </motion.div>
           ))}
         </div>

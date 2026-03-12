@@ -45,7 +45,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
           />
 
           {/* Modal Wrapper (for scrolling) */}
-          <div className="fixed inset-0 z-[110] overflow-y-auto pointer-events-none flex items-center justify-center p-6 md:p-12">
+          <div className="fixed inset-0 z-[110] overflow-y-auto pointer-events-none flex items-center justify-center p-4 sm:p-6 md:p-12">
             {/* Modal */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 40 }}
@@ -53,17 +53,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
               exit={{ opacity: 0, scale: 0.9, y: 40 }}
               className="w-full max-w-2xl pointer-events-auto relative my-auto"
             >
-              <div className="glass rounded-[4rem] border border-white/10 bg-black/95 p-8 md:p-12 relative overflow-hidden shadow-[0_0_100px_rgba(0,0,0,1)]">
+              <div className="glass rounded-[2.25rem] sm:rounded-[3rem] md:rounded-[4rem] border border-white/10 bg-black/95 p-5 sm:p-8 md:p-12 relative overflow-hidden shadow-[0_0_100px_rgba(0,0,0,1)]">
                 {/* Background Glow */}
                 <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand-500/20 blur-[100px] rounded-full pointer-events-none"></div>
                 
-                <div className="flex justify-between items-start mb-10 md:mb-12">
+                <div className="flex justify-between items-start gap-4 mb-8 md:mb-12">
                   <div>
                     <div className="inline-flex items-center gap-3 px-4 py-1.5 glass rounded-full text-[9px] font-black tracking-[0.3em] text-brand-500 border border-white/5 uppercase mb-4">
                       <Sparkles size={14} />
                       Initiate protocol
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black font-display tracking-tighter text-white">Order <span className="font-serif-italic italic text-white/90">AI.</span></h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black font-display tracking-tighter text-white">Order <span className="font-serif-italic italic text-white/90">AI.</span></h2>
                   </div>
                   <button 
                     onClick={onClose}
@@ -137,7 +137,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isOpen, onClose }) => {
                                   setFormState({...formState, needs: opt});
                                   setIsDropdownOpen(false);
                                 }}
-                                className={`w-full text-left px-8 py-4 text-sm font-black tracking-tight transition-all hover:bg-brand-500 hover:text-white ${formState.needs === opt ? 'text-brand-500' : 'text-slate-300'}`}
+                                className={`w-full text-left px-6 sm:px-8 py-4 text-sm font-black tracking-tight transition-all hover:bg-brand-500 hover:text-white ${formState.needs === opt ? 'text-brand-500' : 'text-slate-300'}`}
                               >
                                 {opt}
                               </button>
